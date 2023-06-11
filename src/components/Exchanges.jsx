@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   Image,
+  Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -40,6 +41,19 @@ const Exchanges = () => {
         <Loader />
       ) : (
         <>
+          <VStack alignItems={"flex-end"} marginTop={"4"} marginBottom={"4"}>
+            <Text fontSize={"small"} opacity={0.7}>
+              <i> Powered by </i>
+              <Link
+                color={"blue"}
+                target="_blank"
+                href="https://www.coingecko.com/en/api"
+              >
+                CoinGecko Api
+              </Link>
+            </Text>
+          </VStack>
+
           <HStack wrap={"wrap"} justifyContent={"space-evenly"}>
             {exchanges.map((i) => (
               <ExchangeCard

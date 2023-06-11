@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { server } from "../index";
-import { Button, Container, HStack, Radio, RadioGroup } from "@chakra-ui/react";
+import {
+  Button,
+  Container,
+  HStack,
+  Link,
+  Radio,
+  RadioGroup,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import Loader from "./Loader";
 import ErrorComponent from "./ErrorComponent";
 import CoinCard from "./CoinCard";
@@ -47,6 +56,19 @@ const Coins = () => {
         <Loader />
       ) : (
         <>
+          <VStack alignItems={"flex-end"} marginTop={"4"}>
+            <Text fontSize={"small"} opacity={0.7}>
+              <i> Powered by </i>
+              <Link
+                color={"blue"}
+                target="_blank"
+                href="https://www.coingecko.com/en/api"
+              >
+                CoinGecko Api
+              </Link>
+            </Text>
+          </VStack>
+
           <RadioGroup value={currency} onChange={setCurrency} p={"8"}>
             <HStack spacing={"4"}>
               <Radio value={"inr"}>INR</Radio>
