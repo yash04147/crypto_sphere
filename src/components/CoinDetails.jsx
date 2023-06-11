@@ -5,6 +5,7 @@ import {
   Container,
   HStack,
   Image,
+  Link,
   Progress,
   Radio,
   RadioGroup,
@@ -107,6 +108,18 @@ const CoinDetails = () => {
         <Loader />
       ) : (
         <>
+          <VStack alignItems={"flex-end"} marginBottom={"4"} marginTop={"4"}>
+            <Text fontSize={"small"} opacity={0.7}>
+              <i> Powered by </i>
+              <Link
+                color={"blue"}
+                target="_blank"
+                href="https://www.coingecko.com/en/api"
+              >
+                CoinGecko Api
+              </Link>
+            </Text>
+          </VStack>
           <Box width={"full"} borderWidth={1}>
             <Chart arr={chartArray} currency={currencySymbol} days={days} />
           </Box>
